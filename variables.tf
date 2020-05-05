@@ -1,3 +1,8 @@
+variable "session-name" {
+  description = "The name for the tmux session"
+  default     = "cloud-tmux"
+}
+
 variable "ssh-key" {
   description = "The file name of the ssh key in ~/.ssh"
 }
@@ -15,6 +20,11 @@ variable "user" {
 variable "outfile" {
   description = "The file that we'll write"
   default     = "cloud-tmux"
+}
+
+variable "outpath" {
+  description = "The path that we'll write to"
+  default     = ""
 }
 
 variable "ssh-args" {

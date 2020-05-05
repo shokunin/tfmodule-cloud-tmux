@@ -1,7 +1,11 @@
+locals {
+  tmux_path = (var.outpath == "" ? "${path.module}" : "${var.outpath}")
+}
+
 data "template_file" "tmux" {
   template = "${file("${path.module}/tmux.ctmpl")}"
   vars = {
-      session-name = "foo"
+      session-name = var.session-name
       nodes        = join(" ", var.nodes)
       ssh-key      = var.ssh-key
       ssh-args     = var.ssh-args
@@ -11,7 +15,7 @@ data "template_file" "tmux" {
 
 resource "null_resource" "tmux" {
   provisioner "local-exec" {
-     command = "echo \"${data.template_file.tmux.rendered}\" > ${path.module}/${var.outfile} && chmod +x ${path.module}/${var.outfile} "
+     command = "echo \"${data.template_file.tmux.rendered}\" > ${local.tmux_path}/${var.outfile} && chmod +x ${local.tmux_path}/${var.outfile} "
   }
   depends_on = ["data.template_file.tmux"]
 }
