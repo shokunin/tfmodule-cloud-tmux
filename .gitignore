@@ -1,0 +1,5 @@
+.terraform/*
+test/.terraform/*
+test/terraform.tfstate
+test/terraform.tfstate.*
+cloud-tmux
