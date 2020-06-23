@@ -32,5 +32,5 @@ If you detach the session it should still be visible and re-running the script w
 $ tmux ls
 0: 3 windows (created Tue Jun 23 10:36:15 2020) (attached)
 cloud-tmux: 5 windows (created Tue Jun 23 12:26:48 2020)
-``
+```
 
