@@ -8,8 +8,9 @@ variable "ssh-key" {
 }
 
 variable "nodes" {
-  type        = list(string)
+  type        = list
   description = "The list of nodes eg: ['node1.example.com', '192.168.0.100']"
+  default     = []
 }
 
 variable "user" {

@@ -5,8 +5,8 @@ if [ \$? != 0 ]; then
         i=1
         tmux new-session -s ${ session-name } -n shell -d
         for node in ${nodes} ; do 
-                tmux new-window -d -t "=${ session-name }" -n "node\$\{i\}"
-                tmux send-keys -t :"node\$\{i\}" \"ssh -i ~/.ssh/${ ssh-key }  ${ ssh-args }  -l ${ user } \$node\" Enter
+                tmux new-window -d -t "=${ session-name }" -n "node-$i"
+                tmux send-keys -t :"node-$i" "ssh -i ~/.ssh/${ ssh-key }  ${ ssh-args }  -l ${ user } $node" Enter
                 ((i=i+1))
         done
 fi
