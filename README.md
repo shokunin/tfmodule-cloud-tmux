@@ -23,7 +23,7 @@ module "tmuxer" {
 ./cloud-tmux
 ```
 
-Note if you set the name above the script will appear as ./<name>
+Note if you set the name above the script will appear as ./NAME
 
 
 If you detach the session it should still be visible and re-running the script will re-attach your session
